@@ -8,11 +8,16 @@ const List = ({task,toggleTask,removeTask}) => {
                 checked={task.completed}
                 onChange={() => toggleTask(task.id)}
             />
-            <span style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
-                {task.text}
-            </span>
+            <p className='todoText' style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
+            <span className='timeDue'>{task.time}</span>{task.text}
+            </p>
             <button onClick={() => removeTask(task.id)}>
-                <span class="material-symbols-outlined">
+                <span className="material-symbols-outlined">
+                    favorite
+                </span>
+            </button>
+            <button onClick={() => removeTask(task.id)}>
+                <span className="material-symbols-outlined">
                     delete
                 </span>
             </button>
