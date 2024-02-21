@@ -86,15 +86,6 @@ nav > * {
   display: flex;
   flex-direction: column;
 }
-.addListBox {
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  margin: 10px 20px;
-  padding: 10px;
-  border-radius: 20px;
-  display: flex;
-  justify-content: space-between;
-  box-shadow: 0 0 10px #0000001a;
-}
 .resultListBox {
   padding: 5px 30px;
   overflow-y: scroll;
@@ -134,7 +125,7 @@ li > button {
   background: transparent;
   transition: 0.5s ease-in-out;
 }
-li > button:hover {
+li > button:hover,.favourited{
   border: 1px solid #f25e53;
   background: #f25e53;
   color: #f6f6f6;
@@ -163,12 +154,45 @@ li > span {
   width: 75%;
   word-wrap: break-word;
 }
-input[type="time"] {
+
+.addListBox {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  margin: 10px 20px;
+  padding: 10px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 0 10px #0000001a;
+}
+.addListBox input[type="time"],select{
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  width: 165px;
+  width: 120px;
+  height: 30px;
   margin-right: 5px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 3px 10px;
+}
+.addListBox >input[type="text"] {
+  width: 100%;
+  height: 40px;
+}
+input[type="checkbox"]{
+  width: 30px;
+}
+.addListBox>div{
+  background: #646cff10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.addListBox>div>button{
+  background: #646cff;
+  color: #f6f6f6;
+  border-radius: 15px;
 }
 /* width */
 ::-webkit-scrollbar {
@@ -194,5 +218,8 @@ input[type="time"] {
 @media only screen and (max-width: 700px) {
   .toDoListBox {
     width: 100dvw;
+  }
+  input,select{
+    width: 100px;
   }
 }
